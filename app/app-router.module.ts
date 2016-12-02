@@ -8,6 +8,7 @@ import { PackageEditComponent }	from './package-edit.component';
 const routes: Routes = [
   { path: '',					component: HomeComponent },
   { path: 'package/:id',		component: PackageComponent },
+  { path: 'package-edit',		component: PackageEditComponent },
   { path: 'package-edit/:id',	component: PackageEditComponent }
 ];
 
