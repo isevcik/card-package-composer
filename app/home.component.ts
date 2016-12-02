@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
+import { Package } from './package';
 import { PackageService } from './package.service';
 
 @Component({
@@ -10,11 +11,28 @@ import { PackageService } from './package.service';
 export class HomeComponent {
 	constructor(private packageService: PackageService) {}
 
-	generateDemoContent() {
-		this.packageService.generateDemoPackages();
+	packages: Package[]
+
+	getPackages(): void {
+		this.packages = this.packageService.getAllPackages();
 	}
 
-	deleteAll() {
+	delete(pack: Package): void {
+		this.packageService.deletePackage(pack);
+		this.getPackages();
+	}
+
+	generateDemoContent(): void {
+		this.packageService.generateDemoPackages();
+		this.getPackages();
+	}
+
+	deleteAll(): void {
 		this.packageService.clearAll();
+		this.getPackages();
+	}
+
+	ngOnInit(): void {
+		this.getPackages();
 	}
 };

@@ -1,4 +1,16 @@
+<h2>Your Card Packages</h2>
 <nav>
-	<a (click)="generateDemoContent()">Generate demo content</a>
-	<a (click)="deleteAll()">Delete all</a>
+	<a (click)="generateDemoContent()">Generate Demo Content</a>
+	<a (click)="deleteAll()">Delete All</a>
+	<a [routerLink]="['package-edit']">New Package</a>
 </nav>
+<div>
+	<div *ngFor="let pack of packages">
+		<h3>{{pack.name}}</h3>
+		<p>{{pack.description}}</p>
+
+		<a [routerLink]="['package', pack.id]">Show</a>
+		<a [routerLink]="['package-edit', pack.id]">Edit</a>
+		<a (click)="delete(pack)">Delete</a>
+	</div>
+</div>
