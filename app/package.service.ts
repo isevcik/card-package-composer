@@ -61,6 +61,12 @@ export class PackageService {
 		return pack;
 	}
 
+	deletePackage(pack: Package): void {
+		var packages = this.loadPackages();
+		delete packages[pack.id];
+		this.savePackages(packages);
+	}
+
 	getAllPackages(): Package[] {
 		var packages = this.loadPackages();
 
