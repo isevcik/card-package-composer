@@ -1,1 +1,37 @@
-<h1>PackageEditComponent</h1>
+<h1>{{package.name}} Edit</h1>
+
+<nav>
+	<a [routerLink]="['']">Back To Home</a>
+	<a (click)="save()">Save</a>
+</nav>
+
+<form #packageForm="ngForm">
+	<div *ngIf="name.errors && (name.dirty || name.touched)">
+		<div [hidden]="!name.errors.required">
+		Name is required
+		</div>
+		<div [hidden]="!name.errors.maxlength">
+		Name is limited to {{nameMaxLength}} characters
+		</div>
+	</div>
+	<div *ngIf="description.errors && (description.dirty || description.touched)">
+		<div [hidden]="!description.errors.required">
+		Description is required
+		</div>
+		<div [hidden]="!description.errors.maxlength">
+		Description is limited to {{descMaxLength}} characters
+		</div>
+	</div>
+
+	<label for="package-name">Package Name:</label>
+	<input id="package-name" type="text" name="name" #name="ngModel" [(ngModel)]="package.name" required [maxlength]="nameMaxLength">
+
+	<label for="package-description">Package Description:</label>
+	<textarea id="package-description" name="description" #description="ngModel" [(ngModel)]="package.description" required [maxlength]="descMaxLength"></textarea>
+
+	<label *ngFor="let card of cardsDefinition">
+		<input type="checkbox">{{card.name}}
+		Strength: {{card.strength}}
+		Health: {{card.health}}
+	</label>
+</form>
