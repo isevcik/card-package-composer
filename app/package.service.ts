@@ -45,11 +45,11 @@ export class PackageService {
 	  return Math.floor(Math.random() * (max - min)) + min;
 	}
 
-	getPackage(id: number) {
+	getPackage(id: number): Package {
 		return this.loadPackages()[id];
 	}
 
-	savePackage(pack: Package) {
+	savePackage(pack: Package): Package {
 		if ( !pack.id ) {
 			pack.id = this.generatePackageId();
 		}
@@ -61,11 +61,13 @@ export class PackageService {
 		return pack;
 	}
 
-	getAllPackages() {
-		return this.loadPackages();
+	getAllPackages(): Package[] {
+		var packages = this.loadPackages();
+
+		return Object.keys(packages).map(key => packages[key]);
 	}
 
-	generateDemoPackages() {
+	generateDemoPackages(): void {
 		this.clearAll();
 
 		for (let i=0; i<3; i++) {
@@ -82,7 +84,7 @@ export class PackageService {
 		}
 	}
 
-	clearAll() {
+	clearAll(): void {
 		localStorage.clear();
 	}
 
