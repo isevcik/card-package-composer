@@ -36,7 +36,7 @@ export class PackageService {
 			id = Math.max(parseInt(p), id);
 		}
 
-		return id;
+		return id + 1;
 	}
 
 	private getRandomInt(min: number, max: number) {
