@@ -6,6 +6,8 @@ import { HomeComponent }  from './home.component';
 import { PackageComponent }  from './package.component';
 import { PackageEditComponent }  from './package-edit.component';
 
+import { PackageService } from './package.service';
+
 import { AppRouterModule } from './app-router.module';
 
 @NgModule({
@@ -19,6 +21,11 @@ import { AppRouterModule } from './app-router.module';
 	PackageComponent,
 	PackageEditComponent
   ],
-  bootstrap:    [ AppComponent ]
+  providers: [
+	PackageService
+  ],
+  bootstrap:[
+	AppComponent
+  ]
 })
 export class AppModule { }

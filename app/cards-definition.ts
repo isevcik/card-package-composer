@@ -124,7 +124,7 @@ const cardsDefinition = [
   }
 ];
 
-var cards: Card[];
+var cards: Card[] = [];
 
 cardsDefinition.forEach(c => {
   cards.push(new Card(c.index, c.name, c.health, c.strength));
