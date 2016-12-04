@@ -12,7 +12,7 @@ export class Package {
 	get excludedCards(): Card[] {
 		var self = this;
 		return cardsDefinition.filter(function (dcard: Card) {
-			return self.includedCards.findIndex(function (icard: Card) { return icard.Index === dcard.Index }) == -1;
+			return self.includedCards.findIndex(function (icard: Card) { return icard.index === dcard.index }) == -1;
 		});
 	}
 }
