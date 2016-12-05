@@ -13,8 +13,7 @@ export class PackageService {
 			packages = JSON.parse(localStorage["packages"]);
 
 			for (let p in packages) {
-				var pack: Package = JSON.parse(packages[p]);
-				packages[p] = pack;
+				packages[p] = new Package(JSON.parse(packages[p]));
 			}
 		}
 
