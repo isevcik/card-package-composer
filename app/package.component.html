@@ -1,1 +1,21 @@
-<h1>PackageComponent</h1>
+<h1>{{package.name}} Detail</h1>
+
+<nav>
+	<!-- TODO: show only to logged users? -->
+	<a [routerLink]="['']">Back To Home</a>
+</nav>
+
+<label for="package-name">Package Name:</label>
+<input id="package-name" type="text" value="{{package.name}}" disabled>
+
+<label for="package-description">Package Description:</label>
+<textarea id="package-description" disabled>{{package.description}}</textarea>
+
+<ng-table [config]="tableConfig" (tableChanged)="onChangeTable(tableConfig)" [rows]="tableCards" [columns]="tableColumns">
+</ng-table>
+
+<label for="totalStrength">Total Strength:</label>
+<input type="text" id="totalStrength" value="{{package.totalStrength}}" disabled>
+
+<label for="totalCards">Total Cards:</label>
+<input type="text" id="totalCards" value="{{package.totalCards}}" disabled>
