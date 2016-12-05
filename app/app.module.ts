@@ -9,8 +9,11 @@ import { AppComponent }  from './app.component';
 import { HomeComponent }  from './home.component';
 import { PackageComponent }  from './package.component';
 import { PackageEditComponent }  from './package-edit.component';
+import { LoginComponent }  from './login.component';
 
 import { PackageService } from './package.service';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth-guard.service';
 
 import { AppRouterModule } from './app-router.module';
 
@@ -27,10 +30,13 @@ import { AppRouterModule } from './app-router.module';
 		AppComponent,
 		HomeComponent,
 		PackageComponent,
-		PackageEditComponent
+		PackageEditComponent,
+		LoginComponent
 	],
 	providers: [
-		PackageService
+		PackageService,
+		AuthService,
+		AuthGuard
 	],
 	bootstrap:[
 		AppComponent
