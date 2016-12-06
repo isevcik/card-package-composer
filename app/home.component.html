@@ -1,16 +1,27 @@
-<h2>Your Card Packages</h2>
-<nav>
-	<a (click)="generateDemoContent()">Generate Demo Content</a>
-	<a (click)="deleteAll()">Delete All</a>
-	<a [routerLink]="['package-edit']">New Package</a>
-</nav>
-<div>
-	<div *ngFor="let pack of packages">
-		<h3>{{pack.name}}</h3>
-		<p>{{pack.description}}</p>
+<h1>Your Card Packages</h1>
 
-		<a [routerLink]="['package', pack.id]">Show</a>
-		<a [routerLink]="['package-edit', pack.id]">Edit</a>
-		<a (click)="delete(pack)">Delete</a>
-	</div>
+<div class="row">
+    <div class="col-md-12 text-right">
+        <div class="toolbar">
+            <button class="btn btn-danger" (click)="deleteAll()">Delete All</button>
+            <button class="btn btn-warning" (click)="generateDemoContent()">Generate Demo Content</button>
+            <button class="btn btn-success" [routerLink]="['package-edit']">New Package</button>
+        </div>
+    </div>
+</div>
+
+<div *ngFor="let row of packages | cols:4" class="row">
+    <div *ngFor="let pack of row" class="col-sm-6 col-md-3">
+        <div class="thumbnail text-center">
+            <div class="caption">
+                <h3>{{pack.name}}</h3>
+                <p>{{pack.description}}</p>
+                <p>
+                    <button class="btn btn-info btn-block" [routerLink]="['package', pack.id]">Show</button>
+                    <button class="btn btn-primary btn-block" [routerLink]="['package-edit', pack.id]">Edit</button>
+                    <button class="btn btn-danger btn-block" (click)="delete(pack)">Delete</button>
+                </p>
+            </div>
+        </div>
+    </div>
 </div>

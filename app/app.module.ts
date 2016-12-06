@@ -15,6 +15,8 @@ import { PackageService } from './package.service';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
 
+import { ColsPipe } from './cols.pipe';
+
 import { AppRouterModule } from './app-router.module';
 
 @NgModule({
@@ -31,7 +33,8 @@ import { AppRouterModule } from './app-router.module';
 		HomeComponent,
 		PackageComponent,
 		PackageEditComponent,
-		LoginComponent
+		LoginComponent,
+		ColsPipe
 	],
 	providers: [
 		PackageService,

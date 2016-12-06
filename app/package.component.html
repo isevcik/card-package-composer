@@ -1,21 +1,64 @@
 <h1>{{package.name}} Detail</h1>
 
-<nav>
-	<!-- TODO: show only to logged users? -->
-	<a *ngIf="authService.isLoggedIn" [routerLink]="['']">Back To Home</a>
-</nav>
+<div *ngIf="authService.isLoggedIn" class="row">
+    <div class="col-md-12 text-right">
+        <div class="toolbar">
+            <button class="btn btn-default" [routerLink]="['']">Back To Home</button>
+        </div>
+    </div>
+</div>
 
-<label for="package-name">Package Name:</label>
-<input id="package-name" type="text" value="{{package.name}}" disabled>
+<div class="panel panel-info">
+	<div class="panel-heading">
+		<h3 class="panel-title">Package Name</h3>
+	</div>
 
-<label for="package-description">Package Description:</label>
-<textarea id="package-description" disabled>{{package.description}}</textarea>
+	<div class="panel-body">
+	{{package.name}}
+	</div>
+</div>
 
-<ng-table [config]="tableConfig" (tableChanged)="onChangeTable(tableConfig)" [rows]="tableCards" [columns]="tableColumns">
-</ng-table>
+<div class="panel panel-info">
+	<div class="panel-heading">
+		<h3 class="panel-title">Package Description</h3>
+	</div>
 
-<label for="totalStrength">Total Strength:</label>
-<input type="text" id="totalStrength" value="{{package.totalStrength}}" disabled>
+	<div class="panel-body">
+	{{package.description}}
+	</div>
+</div>
 
-<label for="totalCards">Total Cards:</label>
-<input type="text" id="totalCards" value="{{package.totalCards}}" disabled>
+<div class="panel panel-info">
+	<div class="panel-heading">
+		<h3 class="panel-title">Cards in Package</h3>
+	</div>
+
+	<ng-table [config]="tableConfig" (tableChanged)="onChangeTable(tableConfig)" [rows]="tableCards" [columns]="tableColumns">
+	</ng-table>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">Total Strength</h3>
+			</div>
+
+			<div class="panel-body">
+			{{package.totalStrength}}
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-6">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title">Total Cards</h3>
+			</div>
+
+			<div class="panel-body">
+			{{package.totalCards}}
+			</div>
+		</div>
+	</div>
+</div>

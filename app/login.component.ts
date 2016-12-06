@@ -8,7 +8,7 @@ import { AuthService } from './auth.service';
 })
 export class LoginComponent {
 	message: string;
-	username: string = "Steve";
+	username: string = "Arnold";
 
 	constructor(public authService: AuthService, public router: Router) {
 		this.setMessage();

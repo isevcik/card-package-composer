@@ -1,5 +1,9 @@
 <div id="app-component">
-	<h1>App Component</h1>
-	<div *ngIf="authService.isLoggedIn">Logged as: {{authService.username}} <button (click)="logout()">Logout</button></div>
-	<router-outlet></router-outlet>
+    <div class="logged-as" *ngIf="authService.isLoggedIn">
+        Logged as: {{authService.username}}
+        <button class="btn btn-link" (click)="logout()">Logout</button>
+    </div>
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
 </div>
