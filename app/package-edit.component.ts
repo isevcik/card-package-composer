@@ -41,8 +41,8 @@ export class PackageEditComponent {
 
 	ngOnInit(): void {
 		this.form = new FormGroup({
-			'totalStrength': new FormControl({ value: '', disabled: true}, MaxValidator(this.maxCardsStrength)),
-			'totalCards': new FormControl({ value: '', disabled: true}, MaxValidator(this.maxCardsNum)),
+			'totalStrength': new FormControl('', MaxValidator(this.maxCardsStrength)),
+			'totalCards': new FormControl('', MaxValidator(this.maxCardsNum)),
 			'name': new FormControl(),
 			'description': new FormControl()
 		})
