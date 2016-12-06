@@ -4,6 +4,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Ng2TableModule } from 'ng2-table/ng2-table';
 
 import { PackageService } from './package.service';
+import { AuthService } from './auth.service';
 import { Package } from './package';
 
 @Component({
@@ -67,6 +68,7 @@ export class PackageComponent {
 	}
 
 	constructor(
+		public authService: AuthService,
 		private packageService: PackageService,
 		private route: ActivatedRoute
 	) {}

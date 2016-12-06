@@ -2,7 +2,7 @@
 
 <nav>
 	<!-- TODO: show only to logged users? -->
-	<a [routerLink]="['']">Back To Home</a>
+	<a *ngIf="authService.isLoggedIn" [routerLink]="['']">Back To Home</a>
 </nav>
 
 <label for="package-name">Package Name:</label>
