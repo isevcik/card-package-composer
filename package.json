@@ -8,7 +8,7 @@
 	"tsc": "tsc",
 	"clean": "rm -rf dist/*",
 	"build:html": "cp index-prod.html dist/index.html && cp app/*.html dist/",
-	"build:css": "cp node_modules/bootstrap/dist/css/bootstrap.min.css style.css dist/",
+	"build:css": "cp -r node_modules/bootstrap/dist/css/bootstrap.min.css node_modules/bootstrap/dist/fonts style.css dist/",
 	"build:js": "node build.js",
 	"build-prod": "npm run clean && npm run tsc && npm run build:html && npm run build:css && npm run build:js"
   },
