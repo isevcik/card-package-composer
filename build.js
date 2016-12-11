@@ -3,7 +3,7 @@ var Builder = require('systemjs-builder');
 var builder = new Builder('', 'systemjs.config.js');
 
 builder
-	.bundle('app/main-prod.js', 'dist/bundle.js')
+	.buildStatic('app/main-prod.js', 'dist/bundle.js')
 	.then(function() {
 		console.log('Build complete');
 	})

@@ -7,11 +7,10 @@
 	"start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
 	"tsc": "tsc",
 	"clean": "rm -rf dist/*",
-	"build:systemjs": "cp node_modules/systemjs/dist/system.src.js systemjs.config.js dist/",
-	"build:html": "cp index-prod.html dist/index.html && rm -rf dist/app && mkdir dist/app && cp app/*.html dist/app/",
+	"build:html": "cp index-prod.html dist/index.html && cp app/*.html dist/",
 	"build:css": "cp node_modules/bootstrap/dist/css/bootstrap.min.css style.css dist/",
 	"build:js": "node build.js",
-	"build-prod": "npm run clean && npm run tsc && npm run build:systemjs && npm run build:html && npm run build:css && npm run build:js"
+	"build-prod": "npm run clean && npm run tsc && npm run build:html && npm run build:css && npm run build:js"
   },
   "keywords": [],
   "author": "Ivan Sevcik",
