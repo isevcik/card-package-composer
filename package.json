@@ -4,34 +4,39 @@
   "description": "Angular 2 starter kit",
   "repository": {},
   "scripts": {
-    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "tsc"
+	"start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
+	"tsc": "tsc",
+	"clean": "rm -rf dist/*",
+	"build:systemjs": "cp node_modules/systemjs/dist/system.src.js systemjs.config.js dist/",
+	"build:html": "cp index-prod.html dist/index.html && rm -rf dist/app && mkdir dist/app && cp app/*.html dist/app/",
+	"build:css": "cp node_modules/bootstrap/dist/css/bootstrap.min.css style.css dist/",
+	"build:js": "node build.js",
+	"build-prod": "npm run clean && npm run tsc && npm run build:systemjs && npm run build:html && npm run build:css && npm run build:js"
   },
   "keywords": [],
   "author": "Ivan Sevcik",
   "license": "ISC",
   "dependencies": {
-    "@angular/common": "^2.2.0",
-    "@angular/compiler": "^2.2.0",
-    "@angular/core": "^2.2.0",
-    "@angular/forms": "^2.2.0",
-    "@angular/http": "^2.2.0",
-    "@angular/platform-browser": "^2.2.0",
-    "@angular/platform-browser-dynamic": "^2.2.0",
-    "@angular/router": "^3.2.0",
-    "bootstrap": "^3.3.7",
-    "core-js": "^2.4.1",
-    "ng2-table": "^1.3.2",
-    "reflect-metadata": "^0.1.8",
-    "rxjs": "5.0.0-beta.12",
-    "systemjs": "0.19.40",
-    "zone.js": "^0.6.26"
+	"@angular/common": "^2.2.0",
+	"@angular/compiler": "^2.2.0",
+	"@angular/core": "^2.2.0",
+	"@angular/forms": "^2.2.0",
+	"@angular/http": "^2.2.0",
+	"@angular/platform-browser": "^2.2.0",
+	"@angular/platform-browser-dynamic": "^2.2.0",
+	"@angular/router": "^3.2.0",
+	"bootstrap": "^3.3.7",
+	"core-js": "^2.4.1",
+	"ng2-table": "^1.3.2",
+	"reflect-metadata": "^0.1.8",
+	"rxjs": "5.0.0-beta.12",
+	"systemjs": "0.19.40",
+	"zone.js": "^0.6.26"
   },
   "devDependencies": {
-    "@types/node": "0.0.1",
-    "concurrently": "^3.1.0",
-    "lite-server": "^2.2.2",
-    "typescript": "^2.0.10"
+	"@types/node": "0.0.1",
+	"concurrently": "^3.1.0",
+	"lite-server": "^2.2.2",
+	"typescript": "^2.0.10"
   }
 }

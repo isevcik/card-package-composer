@@ -3,3 +3,4 @@ npm-debug.*
 app/**/*.js
 *.js.map
 .DS_Store
+dist

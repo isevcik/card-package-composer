@@ -43,6 +43,13 @@
 							'npm:zone.js/dist/zone.js',
 							'npm:reflect-metadata/Reflect.js'
 						]
+					},
+					'main-prod.js': {
+						deps: [
+							'npm:core-js/client/shim.min.js',
+							'npm:zone.js/dist/zone.js',
+							'npm:reflect-metadata/Reflect.js'
+						]
 					}
 				}
 			},
