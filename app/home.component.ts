@@ -5,8 +5,8 @@ import { PackageService } from './package.service';
 
 @Component({
   selector: 'home',
-  moduleId: module.id,
-  templateUrl: 'home.component.html'
+  //moduleId: module.id,
+  templateUrl: './app/home.component.html'
 })
 export class HomeComponent {
 	constructor(private packageService: PackageService) {}

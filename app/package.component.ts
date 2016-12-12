@@ -9,8 +9,8 @@ import { Package } from './package';
 
 @Component({
 	selector: 'package',
-	moduleId: module.id,
-	templateUrl: 'package.component.html'
+	//moduleId: module.id,
+	templateUrl: './app/package.component.html'
 })
 export class PackageComponent {
 	package: Package

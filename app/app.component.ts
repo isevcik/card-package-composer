@@ -5,8 +5,8 @@ import { AuthService } from './auth.service';
 
 @Component({
 	selector: 'my-app',
-	moduleId: module.id,
-	templateUrl: 'app.component.html'
+	//moduleId: module.id,
+	templateUrl: './app/app.component.html'
 })
 export class AppComponent  {
 	constructor(public authService: AuthService, public router: Router) {}

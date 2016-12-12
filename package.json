@@ -7,8 +7,8 @@
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "tsc": "tsc",
     "clean": "rm -rf dist/*",
-    "build:html": "cp index-prod.html dist/index.html && cp app/*.html dist/",
-    "build:css": "cp -r node_modules/bootstrap/dist/css/bootstrap.min.css node_modules/bootstrap/dist/fonts style.css dist/",
+    "build:html": "cp index-prod.html dist/index.html && rm -rf dist/app && mkdir dist/app && cp app/*.html dist/app/",
+    "build:css": "rm -rf dist/css dist/fonts && mkdir dist/css && cp -r node_modules/bootstrap/dist/css/bootstrap.min.css css/ dist/css/ && cp -r node_modules/bootstrap/dist/fonts dist/",
     "build:js": "node build.js",
     "build-prod": "npm run clean && npm run tsc && npm run build:html && npm run build:css && npm run build:js"
   },

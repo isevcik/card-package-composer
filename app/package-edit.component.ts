@@ -10,8 +10,8 @@ import { cardsDefinition } from './cards-definition';
 
 @Component({
 	selector: 'package-edit',
-	moduleId: module.id,
-	templateUrl: 'package-edit.component.html'
+	//moduleId: module.id,
+	templateUrl: './app/package-edit.component.html'
 })
 export class PackageEditComponent {
 	// constants
