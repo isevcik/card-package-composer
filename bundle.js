@@ -20153,8 +20153,8 @@ $__System.registerDynamic("10", ["3", "11", "12"], true, function ($__require, e
     }();
     AppComponent = __decorate([core_1.Component({
         selector: 'my-app',
-        moduleId: module.id,
-        templateUrl: 'app.component.html'
+        //moduleId: module.id,
+        templateUrl: './app/app.component.html'
     }), __metadata("design:paramtypes", [auth_service_1.AuthService, router_1.Router])], AppComponent);
     exports.AppComponent = AppComponent;
     
