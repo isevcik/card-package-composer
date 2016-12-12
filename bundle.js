@@ -20240,8 +20240,8 @@ $__System.registerDynamic("14", ["3", "15"], true, function ($__require, exports
     }();
     HomeComponent = __decorate([core_1.Component({
         selector: 'home',
-        moduleId: module.id,
-        templateUrl: 'home.component.html'
+        //moduleId: module.id,
+        templateUrl: './app/home.component.html'
     }), __metadata("design:paramtypes", [package_service_1.PackageService])], HomeComponent);
     exports.HomeComponent = HomeComponent;
     ;
@@ -20324,8 +20324,8 @@ $__System.registerDynamic("16", ["3", "11", "15", "12"], true, function ($__requ
     }();
     PackageComponent = __decorate([core_1.Component({
         selector: 'package',
-        moduleId: module.id,
-        templateUrl: 'package.component.html'
+        //moduleId: module.id,
+        templateUrl: './app/package.component.html'
     }), __metadata("design:paramtypes", [auth_service_1.AuthService, package_service_1.PackageService, router_1.ActivatedRoute])], PackageComponent);
     exports.PackageComponent = PackageComponent;
     ;
@@ -24374,8 +24374,8 @@ $__System.registerDynamic("1f", ["3", "11", "19", "15", "1c", "1d"], true, funct
     }();
     PackageEditComponent = __decorate([core_1.Component({
         selector: 'package-edit',
-        moduleId: module.id,
-        templateUrl: 'package-edit.component.html'
+        //moduleId: module.id,
+        templateUrl: './app/package-edit.component.html'
     }), __metadata("design:paramtypes", [package_service_1.PackageService, router_1.ActivatedRoute])], PackageEditComponent);
     exports.PackageEditComponent = PackageEditComponent;
     ;
@@ -24443,8 +24443,8 @@ $__System.registerDynamic("20", ["3", "11", "12"], true, function ($__require, e
         return LoginComponent;
     }();
     LoginComponent = __decorate([core_1.Component({
-        moduleId: module.id,
-        templateUrl: './login.component.html'
+        //moduleId: module.id,
+        templateUrl: './app/login.component.html'
     }), __metadata("design:paramtypes", [auth_service_1.AuthService, router_1.Router])], LoginComponent);
     exports.LoginComponent = LoginComponent;
     
