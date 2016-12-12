@@ -1,5 +1,7 @@
 # Card Package Composer
 
+**You can see live demo [here.](https://isevcik.github.io/card-package-composer/)**
+
 Web application for composing a packages of gaming cards.
 You can create, view, edit and delete the packages. You can assing predefined cards to the package.
 
@@ -12,4 +14,4 @@ npm install
 npm start
 ```
 
-`npm start` should run server with application and open it in your browser.
+`npm start` should run local server with application and open it in your browser.
